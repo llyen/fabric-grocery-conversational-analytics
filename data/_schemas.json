@@ -1,0 +1,456 @@
+{
+  "dim_data": [
+    {
+      "name": "data",
+      "type": "date32[day]"
+    },
+    {
+      "name": "rok",
+      "type": "int64"
+    },
+    {
+      "name": "miesiac_nr",
+      "type": "int64"
+    },
+    {
+      "name": "miesiac",
+      "type": "string"
+    },
+    {
+      "name": "tydzien_iso",
+      "type": "int64"
+    },
+    {
+      "name": "poczatek_tygodnia",
+      "type": "date32[day]"
+    },
+    {
+      "name": "tydzien",
+      "type": "string"
+    },
+    {
+      "name": "dzien_tygodnia_nr",
+      "type": "int64"
+    },
+    {
+      "name": "dzien_tygodnia",
+      "type": "string"
+    },
+    {
+      "name": "czy_weekend",
+      "type": "bool"
+    }
+  ],
+  "dim_magazyn": [
+    {
+      "name": "magazyn_id",
+      "type": "string"
+    },
+    {
+      "name": "magazyn",
+      "type": "string"
+    },
+    {
+      "name": "zrodlo_opisu",
+      "type": "string"
+    }
+  ],
+  "dim_miasto": [
+    {
+      "name": "miasto_id",
+      "type": "string"
+    },
+    {
+      "name": "miasto",
+      "type": "string"
+    },
+    {
+      "name": "magazyn_id",
+      "type": "string"
+    },
+    {
+      "name": "dojazd_z_magazynu_min",
+      "type": "int64"
+    }
+  ],
+  "dim_strefa": [
+    {
+      "name": "strefa_id",
+      "type": "string"
+    },
+    {
+      "name": "strefa",
+      "type": "string"
+    },
+    {
+      "name": "miasto_strefy",
+      "type": "string"
+    }
+  ],
+  "dim_okno": [
+    {
+      "name": "okno_id",
+      "type": "string"
+    },
+    {
+      "name": "okno",
+      "type": "string"
+    },
+    {
+      "name": "godzina_od",
+      "type": "int64"
+    },
+    {
+      "name": "pora_dnia",
+      "type": "string"
+    }
+  ],
+  "dim_produkt": [
+    {
+      "name": "sku_id",
+      "type": "string"
+    },
+    {
+      "name": "produkt",
+      "type": "string"
+    },
+    {
+      "name": "kategoria",
+      "type": "string"
+    },
+    {
+      "name": "podkategoria",
+      "type": "string"
+    },
+    {
+      "name": "strefa_temperaturowa",
+      "type": "string"
+    },
+    {
+      "name": "dostawca_id",
+      "type": "string"
+    },
+    {
+      "name": "marka",
+      "type": "string"
+    },
+    {
+      "name": "cena",
+      "type": "double"
+    }
+  ],
+  "dim_dostawca": [
+    {
+      "name": "dostawca_id",
+      "type": "string"
+    },
+    {
+      "name": "dostawca",
+      "type": "string"
+    },
+    {
+      "name": "kategoria_glowna",
+      "type": "string"
+    },
+    {
+      "name": "uwaga",
+      "type": "string"
+    }
+  ],
+  "dim_przyczyna_spoznienia": [
+    {
+      "name": "przyczyna_spoznienia_kod",
+      "type": "string"
+    },
+    {
+      "name": "przyczyna_spoznienia",
+      "type": "string"
+    }
+  ],
+  "dim_przyczyna_odpisu": [
+    {
+      "name": "przyczyna_odpisu_kod",
+      "type": "string"
+    },
+    {
+      "name": "przyczyna_odpisu",
+      "type": "string"
+    }
+  ],
+  "fact_zamowienie": [
+    {
+      "name": "zamowienie_id",
+      "type": "int64"
+    },
+    {
+      "name": "data_dostawy",
+      "type": "date32[day]"
+    },
+    {
+      "name": "miasto_id",
+      "type": "string"
+    },
+    {
+      "name": "strefa_id",
+      "type": "string"
+    },
+    {
+      "name": "okno_id",
+      "type": "string"
+    },
+    {
+      "name": "kurs_id",
+      "type": "string"
+    },
+    {
+      "name": "nr_przystanku",
+      "type": "int64"
+    },
+    {
+      "name": "kanal",
+      "type": "string"
+    },
+    {
+      "name": "segment_klienta",
+      "type": "string"
+    },
+    {
+      "name": "wartosc_zamowienia",
+      "type": "double"
+    },
+    {
+      "name": "liczba_linii",
+      "type": "int64"
+    },
+    {
+      "name": "czy_kompletne",
+      "type": "bool"
+    },
+    {
+      "name": "okno_od",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "okno_do",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "dostarczono_o",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "w_oknie",
+      "type": "bool"
+    },
+    {
+      "name": "minuty_spoznienia",
+      "type": "double"
+    },
+    {
+      "name": "przyczyna_spoznienia_kod",
+      "type": "string"
+    },
+    {
+      "name": "status_dostawy",
+      "type": "string"
+    }
+  ],
+  "fact_linia_zamowienia": [
+    {
+      "name": "zamowienie_id",
+      "type": "int64"
+    },
+    {
+      "name": "linia_nr",
+      "type": "int64"
+    },
+    {
+      "name": "sku_id",
+      "type": "string"
+    },
+    {
+      "name": "ilosc_zamowiona",
+      "type": "int64"
+    },
+    {
+      "name": "ilosc_wydana",
+      "type": "int64"
+    },
+    {
+      "name": "status_linii",
+      "type": "string"
+    },
+    {
+      "name": "przyczyna_braku",
+      "type": "string"
+    },
+    {
+      "name": "zamiennik_odrzucony",
+      "type": "bool"
+    },
+    {
+      "name": "cena_jedn",
+      "type": "double"
+    },
+    {
+      "name": "wartosc_zamowiona",
+      "type": "double"
+    },
+    {
+      "name": "wartosc_wydana",
+      "type": "double"
+    },
+    {
+      "name": "wartosc_utracona",
+      "type": "double"
+    }
+  ],
+  "fact_kurs": [
+    {
+      "name": "kurs_id",
+      "type": "string"
+    },
+    {
+      "name": "data",
+      "type": "date32[day]"
+    },
+    {
+      "name": "miasto_id",
+      "type": "string"
+    },
+    {
+      "name": "pojazd",
+      "type": "string"
+    },
+    {
+      "name": "kierowca",
+      "type": "string"
+    },
+    {
+      "name": "przystanki",
+      "type": "int64"
+    },
+    {
+      "name": "planowany_wyjazd",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "faktyczny_wyjazd",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "opoznienie_wyjazdu_min",
+      "type": "int64"
+    },
+    {
+      "name": "km_plan",
+      "type": "double"
+    }
+  ],
+  "fact_odpis": [
+    {
+      "name": "data",
+      "type": "date32[day]"
+    },
+    {
+      "name": "magazyn_id",
+      "type": "string"
+    },
+    {
+      "name": "sku_id",
+      "type": "string"
+    },
+    {
+      "name": "przyczyna_odpisu_kod",
+      "type": "string"
+    },
+    {
+      "name": "ilosc",
+      "type": "int64"
+    },
+    {
+      "name": "wartosc_kosztowa",
+      "type": "double"
+    }
+  ],
+  "it_log_ladowan": [
+    {
+      "name": "ladowanie_id",
+      "type": "int64"
+    },
+    {
+      "name": "data_biznesowa",
+      "type": "date32[day]"
+    },
+    {
+      "name": "system_zrodlowy",
+      "type": "string"
+    },
+    {
+      "name": "tabela",
+      "type": "string"
+    },
+    {
+      "name": "start_ladowania",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "koniec_ladowania",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "wiersze_zaladowane",
+      "type": "int64"
+    },
+    {
+      "name": "wiersze_oczekiwane",
+      "type": "int64"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "komunikat_bledu",
+      "type": "string"
+    },
+    {
+      "name": "proba",
+      "type": "int64"
+    },
+    {
+      "name": "czas_trwania_min",
+      "type": "double"
+    }
+  ],
+  "it_kontrola_jakosci": [
+    {
+      "name": "data_biznesowa",
+      "type": "date32[day]"
+    },
+    {
+      "name": "system_zrodlowy",
+      "type": "string"
+    },
+    {
+      "name": "tabela",
+      "type": "string"
+    },
+    {
+      "name": "kontrola",
+      "type": "string"
+    },
+    {
+      "name": "wynik",
+      "type": "string"
+    },
+    {
+      "name": "bledne_wiersze",
+      "type": "int64"
+    },
+    {
+      "name": "wykonano_o",
+      "type": "timestamp[us, tz=UTC]"
+    }
+  ]
+}

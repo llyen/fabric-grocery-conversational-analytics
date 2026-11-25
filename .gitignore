@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / build
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+
+# Sekrety i konfiguracja lokalna
+.env
+.env.*
+!.env.example
+
+# Stan wdrożenia do Fabric (identyfikatory workspace i elementów)
+.fabric/
+app/rayfin/.temp/
+app/rayfin/.deployments.json
+*_output.json
+deployment.json
+eventhouse_uri.txt
+
+# Pliki generowane przez CLI Rayfin
+app/.agents/
+app/.mcp.json
+
+# Edytor / system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
